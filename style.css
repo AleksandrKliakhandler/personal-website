@@ -171,6 +171,12 @@ h2 {
     background: var(--surface);
 }
 
+.project-card:hover,
+.project-card:focus-visible {
+    border-color: var(--accent-3);
+    background: var(--surface-strong);
+}
+
 .project-kicker {
     margin: 0 0 8px;
     color: var(--accent-2);
