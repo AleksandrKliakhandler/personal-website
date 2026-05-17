@@ -1,222 +1,258 @@
 :root {
-    --bg-color: #121212;
-    --card-color: #1e1e1e;
-    --text-color: #e0e0e0;
-    --heading-color: #ffffff;
-    --accent-color: #00aaff;
-    --accent-hover: #0088cc;
-    --border-color: #333;
+    --bg: #101214;
+    --surface: #181c1f;
+    --surface-strong: #20262a;
+    --text: #edf2f4;
+    --muted: #aeb8bd;
+    --line: #2d363b;
+    --accent: #41d6a6;
+    --accent-2: #f0b35b;
+    --accent-3: #7ab7ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    min-width: 320px;
     margin: 0;
-    padding: 20px;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+        linear-gradient(180deg, rgba(65, 214, 166, 0.08), transparent 420px),
+        var(--bg);
+    color: var(--text);
     line-height: 1.6;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.card {
-    background-color: var(--card-color);
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-h1, h2, h3 {
-    color: var(--heading-color);
-    margin-top: 0;
-}
-
-h1.name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--accent-color);
-}
-
 a {
-    color: var(--accent-color);
+    color: inherit;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-a:hover {
-    color: var(--accent-hover);
+.site-header {
+    border-bottom: 1px solid var(--line);
+    background: rgba(16, 18, 20, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(14px);
 }
 
-/* Header */
-.header {
-    text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 20px;
-}
-
-.tagline {
-    font-size: 1.2rem;
-    font-weight: 300;
-    max-width: 600px;
-    margin: 10px auto 20px;
-}
-
-.contact-info {
+.nav {
+    width: min(1080px, calc(100% - 32px));
+    min-height: 68px;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    font-size: 0.9rem;
-}
-
-.contact-info span, .contact-info a {
-    background: var(--card-color);
-    padding: 5px 12px;
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-}
-
-/* Experience Timeline */
-.timeline {
-    position: relative;
-    padding-left: 30px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    bottom: 5px;
-    width: 2px;
-    background-color: var(--border-color);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.timeline-item:last-child {
-    margin-bottom: 0;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -25px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--accent-color);
-    border: 2px solid var(--bg-color);
-}
-
-.timeline-date {
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 5px;
-}
-
-.tech-stack {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #aaa;
-    margin-bottom: 10px;
-}
-
-.timeline-content ul {
-    padding-left: 20px;
-    margin: 0;
-}
-
-/* Skills */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
-.skill-category h3 {
-    margin-bottom: 5px;
-    color: var(--heading-color);
+.brand {
+    font-weight: 800;
+    letter-spacing: 0;
 }
 
-.skill-category p {
-    margin: 0;
-    font-size: 0.95rem;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* CTA */
-#cta {
-    text-align: center;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--heading-color);
-    padding: 12px 25px;
-    border-radius: 5px;
+.nav-links a {
+    min-height: 40px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: var(--muted);
     font-weight: 600;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cta-button:hover {
-    background-color: var(--accent-hover);
-    color: var(--heading-color);
-    transform: translateY(-2px);
+.nav-links a:hover {
+    color: var(--text);
+    background: var(--surface);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #888;
+main {
+    width: min(1080px, calc(100% - 32px));
+    margin: 0 auto;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    .header {
-        padding: 20px 10px;
-    }
-    h1.name {
-        font-size: 2rem;
-    }
-    .tagline {
-        font-size: 1rem;
-    }
-    .card {
-        padding: 20px;
-    }
-    .contact-info {
+.hero {
+    min-height: 58vh;
+    display: grid;
+    align-items: center;
+    padding: 72px 0 48px;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-copy {
+    max-width: 860px;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: anywhere;
+}
+
+h1 {
+    max-width: 920px;
+    margin: 0;
+    font-size: clamp(2.4rem, 8vw, 5.7rem);
+    line-height: 0.96;
+    letter-spacing: 0;
+}
+
+.intro {
+    max-width: 720px;
+    margin: 26px 0 0;
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+
+h2 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 28px;
+    align-items: start;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
+.project-kicker {
+    margin: 0 0 8px;
+    color: var(--accent-2);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-card h3,
+.resume-grid h3 {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.project-card p,
+.resume-grid p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.project-meta {
+    display: grid;
+    gap: 10px;
+}
+
+.project-meta span {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    padding: 8px 11px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface-strong);
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.project-meta span:last-child {
+    color: var(--accent-3);
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.resume-grid > div {
+    min-height: 180px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
+.footer {
+    width: min(1080px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 40px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    .nav {
+        min-height: 62px;
+        align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 54px 0 42px;
+    }
+
+    .project-card,
+    .resume-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    .resume-grid > div {
+        min-height: auto;
     }
 }
