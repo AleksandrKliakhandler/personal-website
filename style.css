@@ -171,12 +171,6 @@ h2 {
     background: var(--surface);
 }
 
-.project-card:hover,
-.project-card:focus-visible {
-    border-color: var(--accent-3);
-    background: var(--surface-strong);
-}
-
 .project-kicker {
     margin: 0 0 8px;
     color: var(--accent-2);
@@ -204,7 +198,8 @@ h2 {
     gap: 10px;
 }
 
-.project-meta span {
+.project-meta span,
+.project-link {
     min-height: 38px;
     display: inline-flex;
     align-items: center;
@@ -219,8 +214,15 @@ h2 {
     font-weight: 700;
 }
 
-.project-meta span:last-child {
+.project-link {
     color: var(--accent-3);
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    border-color: var(--accent-3);
+    background: var(--surface);
+    color: var(--text);
 }
 
 .resume-grid {
