@@ -218,6 +218,19 @@ h2 {
     color: var(--accent-3);
 }
 
+.status-live {
+    gap: 8px;
+}
+
+.status-live::before {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #41d66f;
+    box-shadow: 0 0 0 4px rgba(65, 214, 111, 0.14);
+    content: "";
+}
+
 .project-link:hover,
 .project-link:focus-visible {
     border-color: var(--accent-3);
