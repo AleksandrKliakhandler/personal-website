@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f0e7">
+    <meta name="description" content="Один литературный комплимент каждый день. Скопируйте строку и порадуйте её.">
+    <title>Комплимент дня</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css?v=20261006-2">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <span class="brand">Комплимент дня</span>
+        <span class="edition">Одна строка в день</span>
+      </header>
+
+      <section class="center" aria-labelledby="quote-title">
+        <h1 id="quote-title" class="visually-hidden">Сегодняшний комплимент</h1>
+        <span class="ornament" aria-hidden="true">✳</span>
+        <button id="quote" class="quote" type="button" disabled>Загружаем комплимент…</button>
+        <p id="copy-hint" class="copy-hint" role="status">Нажмите на строку, чтобы скопировать</p>
+        <div id="credit" class="credit" hidden>
+          <span id="author"></span>
+          <span id="translator" class="translator" hidden></span>
+          <cite id="work"></cite>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a id="telegram" class="telegram" href="#" hidden>Получать в Telegram <span aria-hidden="true">↗</span></a>
+        <p class="timer">До нового комплимента <time id="countdown">--:--:--</time></p>
+      </footer>
+    </main>
+  </body>
+</html>

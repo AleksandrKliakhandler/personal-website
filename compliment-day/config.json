@@ -1,0 +1,10 @@
+{
+  "bot_username": "ComplimentEveryDayBot",
+  "collections": [
+    {
+      "start_date": "2026-10-06",
+      "file": "collections/2026-10-06.json",
+      "count": 50
+    }
+  ]
+}
