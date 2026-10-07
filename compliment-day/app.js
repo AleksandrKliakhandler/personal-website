@@ -5,6 +5,7 @@ const author = document.querySelector('#author');
 const translator = document.querySelector('#translator');
 const work = document.querySelector('#work');
 const countdown = document.querySelector('#countdown');
+const timer = document.querySelector('.timer');
 const telegram = document.querySelector('#telegram');
 
 let config;
@@ -79,7 +80,7 @@ function updateCountdown() {
   const remainder = String(seconds % 60).padStart(2, '0');
   countdown.textContent = `${hours}:${minutes}:${remainder}`;
   const day = utcDay(now);
-  if (config && day !== currentDay) {
+  if (config && config.collections.length && day !== currentDay) {
     showQuote(day).catch(showError);
   }
 }
@@ -95,6 +96,12 @@ async function start() {
   const response = await fetch('config.json', { cache: 'no-store' });
   if (!response.ok) throw new Error('Не удалось загрузить настройки');
   config = await response.json();
+  if (!config.collections.length) {
+    quoteButton.textContent = 'Готовим новую подборку';
+    copyHint.textContent = '';
+    timer.hidden = true;
+    return;
+  }
   if (config.bot_username) {
     telegram.href = `https://t.me/${config.bot_username}?start=site`;
     telegram.hidden = false;
